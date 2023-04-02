@@ -1,0 +1,11 @@
+
+
+
+
+<form action="{% url 'harvest_form' %}" method="POST">
+    {% csrf_token %}
+    {{harvest_form.crop}}
+    {{harvest_form.yield_dry}}
+    {{harvest_form.bag_count}}
+    <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for flush in flushes %}
+<div>{{flush.monotub_id.bag_id.syringe_id.strain_id.name}}  .... {{flush.yield_wet}} g</div>
+
+{% endfor %}
+
+<h3>Estimated total yield (dry):</h3>
+<div>{{yield_estimate}} g</div>
+<div>{{yield_estimate_oz}} oz</div>
+<div>{{yield_estimate_lb}} lb</div>
+
+{% endblock  %}

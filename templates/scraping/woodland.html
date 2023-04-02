@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="url">
+    <a href="https://woodlandformations.ca/product/cubensis-spore-solutions/">Go buy that guy's spores</a>
+</div>
+<hr>
+
+<h2>Spores:</h2>
+<div class="spore-grid">
+    {% for spore in spore_data %}
+    <div class="strain-name">{{spore.strain}}</div>
+    <div>$ {{spore.price | floatformat:2 }}</div>
+    {% if spore.status == 'In stock' %}
+    <div class="stock-in">{{spore.status}}</div>
+    {% elif spore.status == 'Out of stock' %}
+    <div class="stock-out">{{spore.status}}</div>
+    {% else %}
+    <div class="stock-other">{{spore.status}}</div>
+    {% endif %}
+    {% endfor %}
+</div>
+<hr>
+<div class="url">
+    <a href="https://woodlandformations.ca/product/cubensis-spore-solutions/">Go buy that guy's spores</a>
+</div>
+
+
+{% endblock content %}

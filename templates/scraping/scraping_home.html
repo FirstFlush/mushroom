@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+
+
+    <h2>Choose cultivator to scrape:</h2>
+    <form action="{% url 'scrape' %}", method="POST">
+
+        {% csrf_token %}
+        <div>{{form.cultivator_id}}</div>
+        <button type="submit">Scrape!</button>
+
+    </form>
+
+</div>
+
+{% endblock content %}
